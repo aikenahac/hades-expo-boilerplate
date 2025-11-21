@@ -8,8 +8,8 @@ const GREEN_COLOR_TEXT = '\x1b[36m%s\x1b[0m';
 const VIOLET_COLOR_TEXT = '\x1b[35m%s\x1b[0m';
 const ORANGE_COLOR_TEXT = '\x1b[33m%s\x1b[0m';
 
-const appConfig = require('./app.json');
-const easConfig = require('./eas.json').build;
+const appConfig = require('../app.json');
+const easConfig = require('../eas.json').build;
 const buildProfiles = Object.keys(easConfig);
 
 async function main() {
@@ -91,5 +91,5 @@ function createBuildName({ platform, profile }) {
     extension = 'tar.gz'; // iOS Simulator builds are packaged as tar.gz
   }
 
-  return `builds/${profile}-${appConfig.expo.slug}.${extension}`;
+  return `../builds/${profile}-${appConfig.expo.slug}.${extension}`;
 }
